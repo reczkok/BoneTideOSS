@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0e12" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Bone Tide</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="canvas"></canvas>
+
+      <div id="hud" class="hidden">
+        <div id="topbar">
+          <span id="timer">0:00</span>
+          <span class="top-sep"></span>
+          <span id="wave-label">WAVE 1</span>
+          <span class="top-sep"></span>
+          <span id="kills"><span id="kills-icon"></span><span id="kills-n">0</span></span>
+        </div>
+        <div id="level-label">LV 1</div>
+        <canvas id="orb-hp" class="orb" aria-label="Health"></canvas>
+        <canvas id="orb-xp" class="orb" aria-label="Experience"></canvas>
+        <div id="boss-bar" class="hidden">
+          <div id="boss-label">BOSS</div>
+          <div id="boss-track"><div id="boss-fill"></div></div>
+        </div>
+        <div id="actionbar">
+          <button class="action" data-action="dash">
+            <span class="act-icon"></span><span class="act-key">SPACE</span
+            ><span class="act-name">dash</span>
+          </button>
+          <button class="action ult" data-action="ult">
+            <span class="act-icon"></span><span class="act-key">Q</span
+            ><span class="act-name">Nova</span>
+          </button>
+          <button class="action locked" data-action="slot0" disabled>
+            <span class="act-icon"></span><span class="act-key">E</span
+            ><span class="act-name"></span>
+          </button>
+          <button class="action locked" data-action="slot1" disabled>
+            <span class="act-icon"></span><span class="act-key">R</span
+            ><span class="act-name"></span>
+          </button>
+          <button class="action locked" data-action="slot2" disabled>
+            <span class="act-icon"></span><span class="act-key">F</span
+            ><span class="act-name"></span>
+          </button>
+          <button class="action locked" data-action="slot3" disabled>
+            <span class="act-icon"></span><span class="act-key">G</span
+            ><span class="act-name"></span>
+          </button>
+          <button class="action locked" data-action="slot4" disabled>
+            <span class="act-icon"></span><span class="act-key">V</span
+            ><span class="act-name"></span>
+          </button>
+        </div>
+        <div id="touch-stick"><div id="touch-stick-knob"></div></div>
+        <button id="touch-pause" aria-label="Pause">II</button>
+        <button id="spellbook-btn" aria-label="Abilities">
+          <span id="spellbook-icon"></span><span id="spellbook-points" class="hidden">0</span
+          ><span id="spellbook-key">T</span>
+        </button>
+        <div id="banner" class="hidden" role="status" aria-live="polite"></div>
+      </div>
+
+      <div id="overlay">
+        <div id="title-brand">
+          <h1>Bone Tide</h1>
+          <p id="title-sub">a TypeGPU sample game</p>
+        </div>
+        <div id="menu-side">
+          <div id="menu-actions">
+            <button id="start-btn" disabled>Draw your sword</button>
+            <div id="difficulty-row" role="group" aria-label="Difficulty">
+              <button data-diff="easy">easy</button>
+              <button data-diff="normal">normal</button>
+              <button data-diff="hard">hard</button>
+            </div>
+            <button id="menu-options-btn" class="secondary">Options</button>
+            <button id="menu-controls-btn" class="secondary">Controls</button>
+          </div>
+          <div id="loader">
+            <div id="load-track"><div id="load-fill"></div></div>
+            <p id="loading-note" role="status" aria-live="polite">loading…</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="options" class="hidden">
+        <h2>OPTIONS</h2>
+        <div id="options-rows"></div>
+        <button id="options-back">Back</button>
+      </div>
+
+      <div id="keymap" class="hidden">
+        <h2>CONTROLS</h2>
+        <div id="keymap-rows"></div>
+        <button id="keymap-back">Back</button>
+      </div>
+
+      <div id="treescreen" class="hidden">
+        <div id="tree-topbar">
+          <h2>ABILITIES</h2>
+          <span id="tree-points">0 unspent points</span>
+          <button id="tree-continue">Continue</button>
+        </div>
+        <div id="tree-viewport"></div>
+      </div>
+
+      <div id="pausemenu" class="hidden">
+        <h2>PAUSED</h2>
+        <div class="menu-buttons">
+          <button id="resume-btn">Resume</button>
+          <button id="abilities-btn" class="secondary">Abilities</button>
+          <button id="pause-options-btn" class="secondary">Options</button>
+          <button id="pause-controls-btn" class="secondary">Controls</button>
+          <button id="restart-btn" class="secondary">Restart</button>
+          <button id="quit-btn" class="secondary">Return to menu</button>
+        </div>
+      </div>
+
+      <div id="gameover" class="hidden">
+        <h1>YOU FELL</h1>
+        <p id="go-stats"></p>
+        <div class="menu-buttons">
+          <button id="retry-btn">Rise again</button>
+          <button id="go-menu-btn" class="secondary">Return to camp</button>
+        </div>
+      </div>
+
+      <div id="nogpu" class="hidden" role="alert" aria-live="assertive">
+        <h2 id="nogpu-title">WebGPU unavailable</h2>
+        <p id="nogpu-lead">
+          This game renders entirely on <strong>WebGPU</strong>, and this browser isn't handing it
+          over.
+        </p>
+        <div class="menu-buttons">
+          <button id="nogpu-retry">Try again</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

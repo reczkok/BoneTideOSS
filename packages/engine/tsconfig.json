@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // No DOM on purpose: this typecheck is the guard that engine code stays
+    // portable across web (Vite/DOM) and mobile (Hermes/react-native-webgpu).
+    "lib": ["ESNext"],
+    "types": ["@webgpu/types"],
+    "erasableSyntaxOnly": true
+  },
+  "include": ["src"],
+  // Node test stubs run under `node --experimental-strip-types` only; they
+  // import node: builtins that the DOM-less, node-less engine check rejects.
+  "exclude": ["src/platform/node"]
+}

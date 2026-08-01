@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["@webgpu/types", "vite/client"],
+    "erasableSyntaxOnly": true
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,53 @@
+# dependencies
+node_modules/
+
+# logs
+logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+pnpm-debug.log*
+
+# web build
+dist
+dist-ssr
+*.local
+
+# Expo / Metro
+.expo/
+web-build/
+expo-env.d.ts
+.metro-health-check*
+.expo-export-check/
+
+# generated native folders (expo prebuild)
+apps/mobile/ios
+apps/mobile/android
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# editor / OS
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# agent tooling artifacts
+skills-lock.json
+.claude/

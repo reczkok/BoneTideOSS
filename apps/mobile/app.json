@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Bone Tide",
+    "slug": "bone-tide",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#000000",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.bonetide",
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UIStatusBarHidden": true,
+        "UIViewControllerBasedStatusBarAppearance": false,
+        "CADisableMinimumFrameDurationOnPhone": true
+      },
+      "appleTeamId": "3A3JYVJVJ3"
+    },
+    "android": {
+      "package": "com.example.bonetide"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      "expo-asset",
+      "./plugins/withSceneLifecycle.js"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@bonetide/engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#platform/*": {
+      "types": "./src/platform/contract/*",
+      "default": "./src/platform/node/*"
+    }
+  },
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "types": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "assets:check": "node --experimental-strip-types scripts/check-assets.mjs"
+  },
+  "dependencies": {
+    "@loaders.gl/core": "^4.4.3",
+    "@loaders.gl/gltf": "^4.4.3",
+    "@typegpu/noise": "^0.12.0",
+    "typegpu": "^0.12.4",
+    "wgpu-matrix": "^3.4.2"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.71",
+    "typescript": "npm:tsover@6.0.2"
+  }
+}

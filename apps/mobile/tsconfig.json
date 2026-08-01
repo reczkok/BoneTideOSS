@@ -1,0 +1,32 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "types": ["@webgpu/types"],
+
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "paths": {
+      "@typegpu/react": ["./node_modules/@typegpu/react/react-native/index.d.ts"],
+      "@typegpu/react/react-native-worklets": [
+        "./node_modules/@typegpu/react/react-native/worklets.d.ts"
+      ],
+      "typegpu": ["./node_modules/typegpu/index.d.ts"]
+    },
+
+    "strict": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+
+    "allowJs": true
+  },
+  "include": ["App.tsx", "index.ts", "components/**/*", "src/**/*"],
+  "exclude": ["node_modules"]
+}

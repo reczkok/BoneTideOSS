@@ -1,0 +1,6 @@
+packages:
+  - apps/*
+  - packages/*
+nodeLinker: hoisted
+overrides:
+  typescript: npm:tsover@6.0.2

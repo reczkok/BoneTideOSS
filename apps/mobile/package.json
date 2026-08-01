@@ -1,0 +1,52 @@
+{
+  "name": "@bonetide/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "types": "tsc --noEmit -p tsconfig.json",
+    "bundle:check": "expo export --platform ios --output-dir .expo-export-check && rm -rf .expo-export-check"
+  },
+  "dependencies": {
+    "@bonetide/engine": "workspace:*",
+    "@loaders.gl/core": "^4.4.3",
+    "@loaders.gl/gltf": "^4.4.3",
+    "@typegpu/noise": "^0.12.0",
+    "@typegpu/react": "^0.12.0",
+    "expo": "^57.0.19",
+    "expo-asset": "~57.0.16",
+    "expo-build-properties": "~57.0.16",
+    "expo-file-system": "~57.0.6",
+    "expo-keep-awake": "~57.0.1",
+    "expo-system-ui": "~57.0.3",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-gesture-handler": "3.2.1",
+    "react-native-mmkv": "^4.3.2",
+    "react-native-reanimated": "4.6.0",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-webgpu": "^0.6.1",
+    "react-native-worklets": "0.12.1",
+    "typegpu": "^0.12.4",
+    "unplugin-typegpu": "^0.12.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@types/react": "~19.2.17",
+    "@webgpu/types": "^0.1.71",
+    "babel-preset-expo": "^57.0.2",
+    "typescript": "npm:tsover@6.0.2"
+  },
+  "expo": {
+    "install": {
+      "exclude": [
+        "typescript",
+        "react-native-gesture-handler",
+        "react-native-reanimated",
+        "react-native-worklets"
+      ]
+    }
+  }
+}

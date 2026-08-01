@@ -1,0 +1,25 @@
+{
+  "name": "@bonetide/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host --mode https",
+    "build": "tsc -p ./tsconfig.json --noEmit && vite build",
+    "preview": "vite preview",
+    "types": "tsc --p ./tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test tests/unit/*.test.mjs"
+  },
+  "dependencies": {
+    "@bonetide/engine": "workspace:*",
+    "typegpu": "^0.12.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "@webgpu/types": "^0.1.71",
+    "typescript": "npm:tsover@6.0.2",
+    "unplugin-typegpu": "^0.12.3",
+    "vite": "^8.1.3"
+  }
+}
